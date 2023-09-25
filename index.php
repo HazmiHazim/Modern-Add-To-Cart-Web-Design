@@ -1,6 +1,6 @@
 <!-- Connect DB -->
 <?php
-$servername = "127.0.0.1:3307"; //Change to 3306 for defaul db
+$servername = "127.0.0.1:3306";
 $username = "root";
 $password = "";
 $database = "modern_add_to_cart";
@@ -9,6 +9,27 @@ $connection = mysqli_connect($servername, $username, $password, $database);
 
 if (!$connection) {
     die("Connection Failed: " . mysqli_connect_error());
+}
+
+$query = mysqli_query($connection, "SHOW TABLES LIKE 'products'");
+
+// Create Table if Does Not Exists
+if (mysqli_num_rows($query) == 0) {
+    $table = "CREATE TABLE `products` (
+    `id` bigint(20) UNSIGNED NOT NULL,
+    `product_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+    `product_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+    `product_price` decimal(10,2) NOT NULL,
+    `product_image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;";
+    mysqli_query($connection, $table);
+
+    // Insert Data
+    $seeder = "INSERT INTO products (id, product_name, product_description, product_price, product_image) VALUES 
+    (1, 'Yamaha Y16', 'Motosikal Bossku yang di upgrade dari Y15 ke Y16 dengan penampilan yang lebih mantap dan lebih laju. Motorsikal ini menjadi kegilaan oleh mat rempit dan sistur. Motorsikal ini bole dimodifikasi sehingga setanding dengan motorsikal MotoGP.', 10500.00, 'images/y16.png'),
+    (2, 'Modenas ZX25R', 'King of 250cc dengan 4 silinder inline khas untuk pengemar kelajuan. Moto yang dinanti-nanti kan oleh pengguna 250cc kerana bunyinya yang sangat sedap didengari. Motorsikal ini mempunya 43.5 kuasa kuda yang boleh menandingi BMW S1000rr.', 33900.00, 'images/zx25r.png'),
+    (3, 'Honda C70', 'Motorsikal paling laju dalam sejarah yang menggunakan ekzos standard tanpa sebarang modifikasi untuk melajukan motorsikal. Motorsikal yang digeruni oleh pengguna Ducatti Panigale 1199 kerana takut memakan asap motorsikal ini. Motorsikal ini sudah tidak wujud lagi dan semestinya mempunya nilai yang sangat mahal di dunia mengalahkan buggati la voiture noire.', 9999999.99, 'images/c70.png')";
+    mysqli_query($connection, $seeder);
 }
 ?>
 
