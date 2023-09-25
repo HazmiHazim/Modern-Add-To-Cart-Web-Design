@@ -3,3 +3,4 @@ The Add-to-Cart system is built using a powerful combination of HTML, CSS, JavaS
 
 # `Overview`
 ![add-to-cart](https://github.com/HazmiHazim/Modern-Add-To-Cart-Web-Design/assets/120252568/ecf60214-8ae2-41a1-b7c0-8e6fc04ce429)
+![add-to-cart](https://github.com/HazmiHazim/Modern-Add-To-Cart-Web-Design/assets/120252568/056fe299-9d2f-4dde-ae0c-cd1f6022e8e4)
