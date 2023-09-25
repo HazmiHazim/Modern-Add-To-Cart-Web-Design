@@ -1,0 +1,525 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: whitesmoke;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+
+
+/*
+*  Top Bar
+*/
+.x-top-bar {
+    width: 100%;
+    height: 10%;
+    position: relative;
+    margin: 0;
+    padding: 10px 0;
+    overflow: hidden;
+    background-color: #333;
+}
+/*
+*  Top Bar
+*/
+.x-modern-cart {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+/*
+*  Top Bar
+*/
+.x-modern-cart i {
+    font-size: 48px;
+    color: aliceblue;
+    cursor: pointer;
+}
+/*
+*  Top Bar
+*/
+.x-cart-quantity {
+    display: flex;
+    position: absolute;
+    top: 5%;
+    margin-left: 32px;
+    background-color: royalblue;
+    border-radius: 50%;
+    font-size: 16px;
+    color: white;
+    padding: 4px 10px;
+}
+
+
+
+
+
+/*
+*  Add to Cart Section
+*/
+.x-cart-container {
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    top: 0;
+    left: 100%;
+    background-color: white;
+    width: 500px;
+    height: 100vh;
+    z-index: 1000;
+    transition: 0.5s;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+/*
+*  Add to Cart Section
+*/
+.x-cart-active .x-cart-container {
+    left: calc(100% - 500px);
+}
+/*
+*  Add to Cart Section
+*/
+.x-cart-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    padding: 32px 32px 0;
+}
+/*
+*  Add to Cart Section
+*/
+.x-cart-header span {
+    font-size: 36px;
+    color: black;
+}
+/*
+*  Add to Cart Section
+*/
+.x-sign-close {
+    cursor: pointer;
+}
+
+
+
+
+/*
+*  Cart Summary for Total Quantity and Total Price
+*/
+.x-cart-summary {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 0 32px;
+}
+/*
+*  Cart Summary for Total Quantity and Total Price
+*/
+.x-cart-summary-title {
+    font-size: 24px;
+    color: black;
+}
+/*
+*  Cart Summary for Total Quantity and Total Price
+*/
+.x-cart-summary-details {
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    justify-content: space-between;
+}
+/*
+*  Cart Summary for Total Quantity and Total Price
+*/
+.x-cart-summary-quantity,
+.x-cart-summary-price {
+    font-size: 22px;
+    color: black;
+}
+
+
+
+
+/*
+*  Cart Order List
+*/
+.x-cart-order-list {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 0;
+    padding: 0 32px 16px;
+    height: 100%;
+    overflow-y: auto;
+    gap: 20px;
+}
+/*
+*  Cart Order List
+*/
+.x-cart-empty-list {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+/*
+*  Cart Order List
+*/
+.x-cart-empty-list i {
+    font-size: 48px;
+    color: gainsboro;
+}
+/*
+*  Cart Order List
+*/
+.x-cart-empty-list-text {
+    font-size: 24px;
+    color: gainsboro;
+}
+
+
+
+
+/*
+*  List Item When Product is Added
+*/
+.x-cart-list-text {
+    font-size: 16px;
+    color: black;
+}
+/*
+*  List Item When Product is Added
+*/
+.x-cart-list-product-image {
+    display: flex;
+    width: 60px;
+    height: 50px;
+}
+/*
+*  List Item When Product is Added
+*/
+.x-cart-list-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/*
+*  List Item When Product is Added
+*/
+.x-cart-list-product-name {
+    display: flex;
+    width: 30%;
+    align-items: center;
+    justify-content: flex-start;
+}
+/*
+*  List Item When Product is Added
+*/
+.x-cart-list-product-total-price {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+}
+/*
+*  List Item When Product is Added
+*/
+.x-cart-list-product-action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15%;
+    gap: 5px;
+}
+/*
+*  List Item When Product is Added
+*/
+.x-button-minus,
+.x-button-plus {
+    display: flex;
+    width: 15px;
+    height: 15px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    color: aliceblue;
+    font-size: 14px;
+    background: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
+}
+/*
+*  List Item When Product is Added
+*/
+.x-button-minus:hover,
+.x-button-plus:hover {
+    opacity: 0.9;
+}
+/*
+*  List Item When Product is Added
+*/
+.x-cart-list-product-delete {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/*
+*  List Item When Product is Added
+*/
+.x-cart-list-delete {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+/*
+*  List Item When Product is Added
+*/
+.x-cart-list-delete i {
+    font-size: 18px;
+    color: crimson;
+}
+
+
+
+
+/*
+*  Cart Confirm Button
+*/
+.x-cart-button {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 16px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    align-items: center;
+    justify-content: center;
+    background-color: gainsboro;
+}
+/*
+*  Cart Confirm Button
+*/
+.x-cart-reminder {
+    font-size: 16px;
+    color: black;
+}
+/*
+*  Cart Confirm Button
+*/
+.x-cart-confirm-order {
+    margin-top: 18px;
+    border: none;
+    border-radius: 30px;
+    width: 100%;
+    height: 40px;
+    cursor: pointer;
+    background: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
+}
+/*
+*  Cart Confirm Button
+*/
+.x-cart-confirm-order-text {
+    font-size: 16px;
+    color: white;
+}
+/*
+*  Cart Confirm Button
+*/
+.x-cart-confirm-order:hover {
+    opacity: 0.9;
+}
+/*
+*  Cart Confirm Button
+*/
+.x-cart-confirm-order:disabled,
+.x-cart-confirm-order:disabled:hover {
+    background: #AAAAAA;
+    opacity: 1;
+    cursor: default;
+}
+
+
+
+
+
+/*
+*  Load Content from DB
+*/
+.x-content {
+    display: flex;
+    height: 80%;
+    flex-wrap: wrap;
+    position: relative;
+    row-gap: 30px;
+    column-gap: 30px;
+    align-items: center;
+    justify-content: center;
+}
+/*
+*  Load Content from DB
+*/
+.x-product-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+/*
+*  Load Content from DB
+*/
+.x-image-description-overlay {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+/*
+*  Load Content from DB
+*/
+.x-product-image {
+    width: 400px;
+    height: 350px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+/*
+*  Load Content from DB
+*/
+.x-product-description-overlay {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    opacity: 0;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 8px;
+    transition: opacity 0.4s ease-in-out;
+    background-color: black;
+    overflow-y: auto;
+}
+/*
+*  Load Content from DB
+*/
+.x-image-description-overlay:hover .x-product-description-overlay {
+    opacity: 0.7;
+}
+/*
+*  Load Content from DB
+*/
+.x-product-description {
+    color: aliceblue;
+    font-size: 16px;
+}
+/*
+*  Load Content from DB
+*/
+.x-product-name,
+.x-product-price {
+    font-size: 16px;
+    color: black;
+}
+/*
+*  Load Content from DB
+*/
+.x-button-add-to-cart {
+    width: 50%;
+    border: none;
+    padding: 12px 8px;
+    color: aliceblue;
+    border-radius: 6px;
+    cursor: pointer;
+    background: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
+}
+/*
+*  Load Content from DB
+*/
+.x-button-add-to-cart:hover {
+    box-shadow: 0 1px 30px rgba(80, 63, 205, 0.5);
+    transition: 0.1s;
+}
+
+
+
+.x-success-add-to-cart-message {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    gap: 10px;
+    overflow: hidden;
+}
+
+.x-toast-success-message {
+    display: flex;
+    position: relative;
+    width: 300px;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    padding: 8px;
+    bottom: 0;
+    left: 0;
+    gap: 10px;
+    border-radius: 36px;
+    transform: translateX(-100%);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    animation: slide 0.3s linear forwards;
+}
+
+.x-toast-success-message i {
+    color: green;
+}
+
+.x-toat-success-message-text {
+    color: black;
+}
+
+.x-toast-success-message::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background-color: green;
+    animation: progress 2s linear forwards;
+}
+
+@keyframes slide {
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes progress {
+    100% {
+        width: 0;
+    }
+}
