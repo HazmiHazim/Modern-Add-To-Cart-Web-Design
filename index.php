@@ -5,11 +5,19 @@ $username = "root";
 $password = "";
 $database = "modern_add_to_cart";
 
-$connection = mysqli_connect($servername, $username, $password, $database);
+$connection = mysqli_connect($servername, $username, $password);
 
 if (!$connection) {
     die("Connection Failed: " . mysqli_connect_error());
 }
+
+// Check if Database Not Exists Then  Create The Database, But If Exists Then Proceed
+if (!mysqli_fetch_row(mysqli_query($connection, "SELECT SCHEMA_NAME FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = '$database'"))) {
+    mysqli_query($connection, "CREATE DATABASE " . $database);
+}
+
+// New Connection If Database is Created
+$connection = mysqli_connect($servername, $username, $password, $database);
 
 $query = mysqli_query($connection, "SHOW TABLES LIKE 'products'");
 
@@ -107,12 +115,14 @@ if (mysqli_num_rows($query) == 0) {
             echo '</div>';
             echo '<span class="x-product-name">' . $name . '</span>';
             echo '<span class="x-product-price">' . 'RM ' . $price . '</span>';
-            echo '<button type="button" class="x-button-add-to-cart" ' . 'data-x-product-id="' . $id . '"'
-                . ' data-x-product-name="' . $name . '"' . ' data-x-product-price="' . $price . '"' . ' data-x-product-image="' . $image . '"' . '>';
+            echo '<button type="button" class="x-button-add-to-cart" ' . 'data-x-product-id="' . $id . '"' .
+                 ' data-x-product-name="' . $name . '"' . ' data-x-product-price="' . $price . '"' . ' data-x-product-image="' . $image . '"' . '>';
             echo '<span class="x-button-add-to-cart-text">' . 'Add to Cart' . '</span>';
             echo '</button>';
             echo '</div>';
         }
+        // Always Close Connection At The End of Your PHP for A Good Practice
+        mysqli_close($connection);
         ?>
     </div>
 
