@@ -5,6 +5,6 @@ The Add-to-Cart system is built using a combination of HTML, CSS, JavaScript, an
 ![add-to-cart](https://github.com/HazmiHazim/Modern-Add-To-Cart-Web-Design/assets/120252568/056fe299-9d2f-4dde-ae0c-cd1f6022e8e4)
 
 # `Run PHP File Without Using Web Server`
-`` Open terminal or command prompt``
-``cd modern-add-to-cart``
-``php -S 127.0.0.1:8000``
+``` Open terminal or command prompt```
+```cd modern-add-to-cart```
+```php -S 127.0.0.1:8000```
