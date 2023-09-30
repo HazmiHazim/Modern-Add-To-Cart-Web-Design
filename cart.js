@@ -66,7 +66,7 @@ addBtn.forEach(button => {
             let toastText = document.createElement("div");
 
             toastText.classList.add("x-toast-success-message");
-            toastText.innerHTML = `<i class='bx bxs-check-circle'></i><span class="x-toat-success-message-text">Successful Add Product to Cart</span>`;
+            toastText.innerHTML = `<i class='bx bxs-check-circle'></i><span class="x-toast-success-message-text">Successful Add Product to Cart</span>`;
             success.appendChild(toastText);
 
             setTimeout(() => {
